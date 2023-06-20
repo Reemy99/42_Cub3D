@@ -1,6 +1,8 @@
 
 #include "../include/include.h"
 
+//muha
+
 void	completeـdrawing1(t_all *data, double *x1, double *y1)
 {
 	horizontal_inter(data, data->norm.start_angle);
