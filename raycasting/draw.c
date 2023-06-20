@@ -56,7 +56,6 @@ void	completeـdrawing2(t_all *data, int i)
 /*  calculates the start angle by subtracting 30 degrees from direction_ang and assigns the result to start_angle
 	convert from degree to π :
 				angle - (30 * (M_PI / 180)) -> angle - (30 * 0.01745) = 0.5235π -> 29.9999 degree
-
 */
 void	completeـdrawing3(t_all *data, double *increment)
 {

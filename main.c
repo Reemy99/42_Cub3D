@@ -39,7 +39,7 @@ int	check_wall(t_all *data, double y, double x)
 	return (0);
 }
 //_________________________________________________________________________
-
+//fmod helps to divide one number by another and gives you the remainder
 double	normalize_angle(double ang)
 {
 	ang = fmod(ang, 2 * M_PI);
@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf("Usage : ./cub3d <map name>\n");
+		printf("Usage : ./Cub3D /maps/<map name>\n");
 		exit(1);
 	}
 	else
