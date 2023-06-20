@@ -4,6 +4,7 @@ This project is about making 3D game in C language using mlx library
 __________________________________________________________________________________________________________________
 
 ### calculate with radian
+
         M_PI = 3.1415 π
         1π   = 57.295 degree
     M_PI * 2 = 6.2831 π
