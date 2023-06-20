@@ -25,3 +25,5 @@ Hooking into events It allows you to register to any of the below events with th
 we used it on *int main* function with calling the *RELEASE, PRESS and DESTROY* events
 
 <img width="717" alt="events in mlx" src="https://github.com/realdahh/Cub3d/assets/111651235/356b4041-17c0-48be-90f3-764f5c161853">
+
+_____________________________________________

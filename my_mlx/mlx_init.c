@@ -55,6 +55,6 @@ void	init_mlx(t_all *data)
 	data->mlx.h_win);
 	data->mlx.addr = mlx_get_data_addr(data->mlx.img, &data->mlx.bpp,
 			&data->mlx.line_length, &data->mlx.endian);
-	ft_bzero(&data->key, sizeof(data->key));
+	//ft_bzero(&data->key, sizeof(data->key));
 	load_textures(data);
 }

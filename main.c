@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf("Usage : ./cub3d <filename>\n");
+		printf("Usage : ./cub3d <map name>\n");
 		exit(1);
 	}
 	else
