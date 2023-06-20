@@ -1,5 +1,4 @@
 
-
 #include "../include/include.h"
 
 void	horizontal_inter_init(t_all *data, double ang)
@@ -18,6 +17,7 @@ void	horizontal_inter_init(t_all *data, double ang)
 	if (is_left(ang) && data->norm.step_x > 0)
 		data->norm.step_x *= -1;
 }
+//_____________________________________________________________
 
 void	horizontal_inter(t_all *data, double ang)
 {
@@ -43,6 +43,7 @@ void	horizontal_inter(t_all *data, double ang)
 	data->hor_x = INT_MAX;
 	return ;
 }
+//_____________________________________________________________
 
 void	vertical_inter_init(t_all *data, double ang)
 {
@@ -60,6 +61,7 @@ void	vertical_inter_init(t_all *data, double ang)
 	if (!is_up(ang) && data->norm.step_y < 0)
 		data->norm.step_y *= -1;
 }
+//_____________________________________________________________
 
 void	vertical_inter_helper(t_all *data, double ang, int *index_y, \
 		int *index_x)
@@ -75,6 +77,7 @@ void	vertical_inter_helper(t_all *data, double ang, int *index_y, \
 		*index_y = floor(data->norm.first_y / CUB);
 	}
 }
+//_____________________________________________________________
 
 void	vertical_inter(t_all *data, double ang)
 {
