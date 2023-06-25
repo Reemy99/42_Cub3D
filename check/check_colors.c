@@ -65,14 +65,14 @@ int	check_colors(t_all *data)
 	if (!check_ceiling(data, 0))
 	{
 		free_map(data);
-		free_parssing(data);
+		free_parsing_data(data);
 		printf("check ceiling\n");
 		return (1);
 	}
 	if (!check_floor(data, 0))
 	{
 		free_map(data);
-		free_parssing(data);
+		free_parsing_data(data);
 		printf("check floor\n");
 		return (1);
 	}

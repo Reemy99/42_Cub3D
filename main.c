@@ -59,7 +59,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		if (!parssing(av[1], &data))
+		if (!parsing(av[1], &data))
 		{
 			return (1);
 		}

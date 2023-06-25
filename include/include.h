@@ -156,10 +156,10 @@ void				move_left(t_all *data);
 void				move_right(t_all *data);
 void				rotate_left_and_right(t_all *data, int direction);
 
-// parssing
-int					parssing(char *av, t_all *data);
+// parsing
+int					parsing(char *av, t_all *data);
 
-// parssing utils
+// parsing utils
 void				init_data(t_all *data);
 int					validate_file_extension(char *av);
 int					read_file(char *file, t_all *data, int i);
@@ -170,7 +170,7 @@ void				free_all(t_all *data);
 void				free_rgb(char **rgb);
 void				free_textures(t_all *data);
 void				free_map(t_all *data);
-void				free_parssing(t_all *data);
+void				free_parsing_data(t_all *data);
 void				free_maps(t_all *data);
 
 // get_textures

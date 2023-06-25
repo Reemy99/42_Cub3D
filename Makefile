@@ -22,11 +22,11 @@ RS	= "\033[0m"
 #________________________________________________________________________________
 
 SRC =	main.c \
-		parssing/get_all.c \
-		parssing/parssing.c \
-		parssing/get_colors.c \
-		parssing/get_textures.c \
-		parssing/parssing_utils.c\
+		parsing/get_all.c \
+		parsing/parsing.c \
+		parsing/get_colors.c \
+		parsing/get_textures.c \
+		parsing/parsing_utils.c\
 		\
 		check/check_colors.c \
 		check/check_textures.c \
