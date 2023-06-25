@@ -6,30 +6,13 @@
 /*   By: muganiev <muganiev@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:13:22 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/24 22:13:00 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/24 23:15:58 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/include.h"
 
-int	get_metadata(t_all *data)
-{
-	if (get_ceiling(data))
-		return (0);
-	if (get_floor(data))
-		return (0);
-	if (get_north(data))
-		return (0);
-	if (get_south(data))
-		return (0);
-	if (get_east(data))
-		return (0);
-	if (get_west(data))
-		return (0);
-	return (1);
-}
-
-int	is_empty(char *str)
+int	check_is_map_empty(char *str)
 {
 	int	i;
 
@@ -43,26 +26,43 @@ int	is_empty(char *str)
 	return (0);
 }
 
-void	get_map(t_all *data, int i, int len, int temp)
+int	get_info_of_map(t_all *data)
+{
+	if (parse_ceiling(data))
+		return (0);
+	if (parse_floor(data))
+		return (0);
+	if (parse_north(data))
+		return (0);
+	if (parse_south(data))
+		return (0);
+	if (parse_east(data))
+		return (0);
+	if (parse_west(data))
+		return (0);
+	return (1);
+}
+
+void	save_map(t_all *data, int i, int len, int temp)
 {
 	i = data->parss.map_index;
-	while (data->parss.all[i] && !is_empty(data->parss.all[i]))
+	while (data->parss.all[i] && !check_is_map_empty(data->parss.all[i]))
 		i++;
-	if (!data->parss.all[i])
+	if (data->parss.all[i] == NULL)
 	{
 		data->parss.map = NULL;
 		free_all(data);
 		return ;
 	}
 	temp = i;
-	while (data->parss.all[i])
+	while (data->parss.all[i] != NULL)
 	{
 		i++;
 		len++;
 	}
 	data->parss.map = malloc(sizeof(char *) * (len + 1));
 	i = 0;
-	while (data->parss.all[temp])
+	while (data->parss.all[temp] != NULL)
 	{
 		data->parss.map[i] = ft_strdup(data->parss.all[temp]);
 		temp++;
