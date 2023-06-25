@@ -6,19 +6,19 @@
 /*   By: muganiev <muganiev@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 22:29:07 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/24 22:29:10 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/24 23:14:28 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/include.h"
 
-int	get_floor(t_all *data)
+int	parse_floor(t_all *data)
 {
 	int		i;
 	char	*temp;
 
 	i = 0;
-	while (data->parss.all[i])
+	while (data->parss.all[i] != NULL)
 	{
 		if (!ft_strncmp(data->parss.all[i], "F", 1))
 		{
@@ -34,13 +34,13 @@ int	get_floor(t_all *data)
 	return (1);
 }
 
-int	get_ceiling(t_all *data)
+int	parse_ceiling(t_all *data)
 {
 	int		i;
 	char	*temp;
 
 	i = 0;
-	while (data->parss.all[i])
+	while (data->parss.all[i] != NULL)
 	{
 		if (!ft_strncmp(data->parss.all[i], "C", 1))
 		{

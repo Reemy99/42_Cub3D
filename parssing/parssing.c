@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:13:22 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/24 22:33:13 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/24 23:35:05 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ int	check_position(t_all *data)
 int	parss_metadata(char *av, t_all *data)
 {
 	init_data(data);
-	if (check_file_name(av))
+	if (validate_file_extension(av))
 		return (printf("check your name file\n"), 0);
 	if (!read_file(av, data, 0))
 	{
 		printf("check if file is empty\n");
 		return (0);
 	}
-	if (!get_metadata(data))
+	if (!get_info_of_map(data))
 	{
 		free_all(data);
 		free_metadata(data);
@@ -111,7 +111,7 @@ int	parssing(char *av, t_all *data)
 		printf("map is above a metadata");
 		return (0);
 	}
-	get_map(data, 0, 0, 0);
+	save_map(data, 0, 0, 0);
 	if (!data->parss.map)
 	{
 		free_parssing(data);

@@ -65,7 +65,7 @@ int	endmap_index(char **str)
 	i--;
 	while (str[i])
 	{
-		if (ft_strlen(str[i]) && is_empty(str[i]))
+		if (ft_strlen(str[i]) && check_is_map_empty(str[i]))
 			break ;
 		i--;
 	}
