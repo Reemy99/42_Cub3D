@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:56:16 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:56:19 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 17:52:43 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	middle_char(t_all *data, int i, int j, int start)
 		j = start - 1;
 		while (++j < end)
 		{
-			if (space_checker(data, i, j) == 1)
+			if (check_space(data, i, j) == 1)
 				return (1);
 			if (zero_checker(data, i, j) == 1)
 				return (1);

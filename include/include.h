@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:53:52 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 18:00:54 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,24 +199,24 @@ void				save_map(t_all *data, int i, int len, int temp);
 
 // check colors
 int					check_ceiling(t_all *data, int j);
-int					check_colors(t_all *data);
+int					validate_rgb_colors(t_all *data);
 
-// check_colors_utils
-int					cout_comma(char *str);
-int					check_is_rgb(char **rgb);
-int					fill_ceiling(char **color, t_all *data);
-int					fill_floor(char **color, t_all *data);
+// validate_rgb_colors_utils
+int					count_commas(char *str);
+int					check_rgb_validity(char **rgb);
+int					fill_ceiling_color(char **color, t_all *data);
+int					fill_floor_color(char **color, t_all *data);
 
-// check_textures
-int					check_textures(t_all *data);
+// validate_textures
+int					validate_textures(t_all *data);
 
-// check_textures_utils
+// validate_textures_utils
 int					open_file(char *str);
 void				init_textures(t_all *data);
 
 // check_map
 int					check_is_white_spaces(char *str);
-int					check_map(t_all *data);
+int					validate_map(t_all *data);
 unsigned int		big_len(t_all *data);
 void				init_map(t_all *data);
 int					check_characters(t_all *data);
@@ -230,7 +230,7 @@ int					check_player(t_all *data, int i, int j, int player);
 int					middle_char(t_all *data, int i, int j, int start);
 int					middle_char_helper(t_all *data, int i, int j);
 int					zero_checker(t_all *data, int i, int j);
-int					space_checker(t_all *data, int i, int j);
+int					check_space(t_all *data, int i, int j);
 int					check_is_map_empty(char *str);
 int					check_wall(t_all *data, double y, double x);
 int					check_wall_y(t_all *data, int x_wall, int y_wall);

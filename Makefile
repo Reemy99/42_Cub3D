@@ -28,15 +28,15 @@ SRC =	main.c \
 		parsing/get_textures.c \
 		parsing/parsing_utils.c\
 		\
-		check/check_colors.c \
-		check/check_textures.c \
-		check/check_colors_utils.c\
-		check/check_textures_utils.c \
-		check/check_map.c \
-		check/check_map2.c \
-		check/check_map3.c \
-		check/check_map4.c\
-		check/check_map5.c \
+		validation/validate_rgb_colors.c \
+		validation/validate_textures.c \
+		validation/validate_rgb_colors_utils.c\
+		validation/validate_textures_utils.c \
+		validation/check_map.c \
+		validation/check_map2.c \
+		validation/check_map3.c \
+		validation/check_map4.c\
+		validation/check_map5.c \
 		\
 		raycasting/draw.c \
 		raycasting/math.c \

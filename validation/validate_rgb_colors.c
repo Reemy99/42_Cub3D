@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_colors.c                                     :+:      :+:    :+:   */
+/*   validate_rgb_colors.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 16:13:22 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:55:55 by muganiev         ###   ########.fr       */
+/*   Created: 2023/06/29 17:16:32 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 17:16:34 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	check_floor(t_all *data, int j)
 	if (data->parss.floor[1] != ' ')
 		return (0);
 	trimed_str = ft_strtrim(&data->parss.floor[1], " ");
-	j = cout_comma(trimed_str);
+	j = count_commas(trimed_str);
 	if (j == 2)
 	{
 		rgb = ft_split(trimed_str, ',');
 		free(trimed_str);
-		if (check_is_rgb(rgb))
+		if (check_rgb_validity(rgb))
 		{
 			free_rgb(rgb);
 			return (0);
 		}
-		if (fill_floor(rgb, data))
+		if (fill_floor_color(rgb, data))
 		{
 			free_rgb(rgb);
 			return (0);
@@ -49,17 +49,17 @@ int	check_ceiling(t_all *data, int j)
 	if (data->parss.ceiling[1] != ' ')
 		return (0);
 	trimed_str = ft_strtrim(&data->parss.ceiling[1], " ");
-	j = cout_comma(trimed_str);
+	j = count_commas(trimed_str);
 	if (j == 2)
 	{
 		rgb = ft_split(trimed_str, ',');
 		free(trimed_str);
-		if (check_is_rgb(rgb))
+		if (check_rgb_validity(rgb))
 		{
 			free_rgb(rgb);
 			return (0);
 		}
-		if (fill_ceiling(rgb, data))
+		if (fill_ceiling_color(rgb, data))
 		{
 			free_rgb(rgb);
 			return (0);
@@ -70,7 +70,7 @@ int	check_ceiling(t_all *data, int j)
 	return (0);
 }
 
-int	check_colors(t_all *data)
+int	validate_rgb_colors(t_all *data)
 {
 	if (!check_ceiling(data, 0))
 	{

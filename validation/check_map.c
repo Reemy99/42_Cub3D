@@ -1,45 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_textures_utils.c                             :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 16:56:26 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:56:29 by muganiev         ###   ########.fr       */
+/*   Created: 2023/06/29 16:56:01 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 18:00:54 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/include.h"
 
-int	check_is_white_spaces(char *str)
+int	validate_map(t_all *data)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	init_map(data);
+	add_space(data);
+	if (check_characters(data))
 	{
-		if (str[i] != ' ' && !(str[i] >= 9 && str[i] <= 13))
-			return (i);
-		i++;
-	}
-	return (i);
-}
-
-int	open_file(char *str)
-{
-	int	fd;
-
-	fd = open(str, O_RDONLY);
-	if (fd < 0)
+		free_maps(data);
+		printf("invalid map characters\n");
 		return (1);
+	}
+	if (check_valid_map(data))
+	{
+		free_maps(data);
+		printf("invalid map \n");
+		return (1);
+	}
+	init_angle(data);
 	return (0);
-}
-
-void	init_textures(t_all *data)
-{
-	data->valid.ea = NULL;
-	data->valid.we = NULL;
-	data->valid.so = NULL;
-	data->valid.no = NULL;
 }

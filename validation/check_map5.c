@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:56:22 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:56:24 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 17:52:43 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	zero_checker(t_all *data, int i, int j)
 	return (0);
 }
 
-int	space_checker(t_all *data, int i, int j)
+int	check_space(t_all *data, int i, int j)
 {
 	if (data->valid.maps[i][j] == ' ')
 	{
