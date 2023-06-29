@@ -117,7 +117,7 @@ typedef struct s_norm
 	int				start;
 	int				end;
 	unsigned int	color;
-	t_texture		*choice_txt;
+	t_texture		*choiceast_txt;
 	double			start_angle;
 }	t_norm;
 
@@ -141,10 +141,10 @@ typedef struct s_all
 	double			hor_x;
 	double			hor_y;
 	double			x_offset;
-	t_texture		w_txt;
-	t_texture		e_txt;
-	t_texture		n_txt;
-	t_texture		s_txt;
+	t_texture		west_txt;
+	t_texture		east_txt;
+	t_texture		north_txt;
+	t_texture		south_txt;
 	t_texture		minimap;
 	t_norm			norm;
 }					t_all;
@@ -244,8 +244,8 @@ int					is_left(double ang);
 int					is_up(double ang);
 unsigned int		get_color(t_texture txt, double y, t_all *data, \
 					double wall_h);
-unsigned int		get_floor_c(t_all *data);
-unsigned int		get_ceiling_c(t_all *data);
+unsigned int		floor_color(t_all *data);
+unsigned int		ceiling_color(t_all *data);
 
 // intersection
 void				horizontal_inter_helper(t_all *data, double ang, \
@@ -258,7 +258,7 @@ void				vertical_inter_helper(t_all *data, \
 void				vertical_inter(t_all *data, double ang);
 
 void				render_minimap(t_all *data);
-void				draw_circle(t_all *data, double y, double x, int color);
+void				draw_inside_circle(t_all *data, double y, double x, int color);
 void				draw_miniplayer(t_all *data, double x, double y, int color);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:41:54 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 18:43:47 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 19:03:38 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	completeـdrawing1(t_all *data, double *x1, double *y1)
 		*x1 = data->hor_x;
 		data->x_offset = fmod(*x1, CUB);
 		if (is_up(data->norm.start_angle))
-			data->norm.choice_txt = &data->n_txt;
+			data->norm.choiceast_txt = &data->north_txt;
 		else
-			data->norm.choice_txt = &data->s_txt;
+			data->norm.choiceast_txt = &data->south_txt;
 	}
 	else
 	{
@@ -33,9 +33,9 @@ void	completeـdrawing1(t_all *data, double *x1, double *y1)
 		*x1 = data->ver_x;
 		data->x_offset = fmod(*y1, CUB);
 		if (is_left(data->norm.start_angle))
-			data->norm.choice_txt = &data->e_txt;
+			data->norm.choiceast_txt = &data->east_txt;
 		else
-			data->norm.choice_txt = &data->w_txt;
+			data->norm.choiceast_txt = &data->west_txt;
 	}
 }
 //_____________________________________________________________
@@ -47,19 +47,19 @@ void	completeـdrawing2(t_all *data, int i)
 	j = 0;
 	while (j < data->norm.start)
 	{
-		my_mlx_pixel_put(data, i, j, get_ceiling_c(data));
+		my_mlx_pixel_put(data, i, j, ceiling_color(data));
 		j++;
 	}
 	while (j < data->norm.end)
 	{
-		data->norm.color = get_color(*data->norm.choice_txt, j, data, \
+		data->norm.color = get_color(*data->norm.choiceast_txt, j, data, \
 				data->norm.wall_height);
 		my_mlx_pixel_put(data, i, j, data->norm.color);
 		j++;
 	}
 	while (j < data->mlx.h_win)
 	{
-		my_mlx_pixel_put(data, i, j, get_floor_c(data));
+		my_mlx_pixel_put(data, i, j, floor_color(data));
 		j++;
 	}
 }
@@ -68,13 +68,14 @@ void	completeـdrawing2(t_all *data, int i)
 	convert from degree to π :
 				angle - (30 * (M_PI / 180)) -> angle - (30 * 0.01745) = 0.5235π -> 29.9999 degree
 */
-void	completeـdrawing3(t_all *data, double *increment)
+void	calculate_angle(t_all *data, double *increment)
 {
 	data->norm.start_angle = data->direction_ang - (30 * (M_PI / 180)); 
 	data->norm.start_angle = normalize_angle(data->norm.start_angle);
 	*increment = (60 * (M_PI / 180)) / data->mlx.w_win;
 }
 //_____________________________________________________________
+
 int	start_drawing(t_all *data)
 {
 	int				i;
@@ -82,19 +83,23 @@ int	start_drawing(t_all *data)
 	double			y1;
 	double			increment;
 
-	completeـdrawing3(data, &increment);
+	calculate_angle(data, &increment); // player angle
 	i = -1;
 	while (++i < data->mlx.w_win)
 	{
 		completeـdrawing1(data, &x1, &y1);
 		data->norm.cub_distance = calculate_distance(data, y1, x1) / CUB;
+
 		data->norm.cub_distance *= cos(data->direction_ang - \
 				data->norm.start_angle);
+
 		data->norm.wall_height = data->mlx.h_win / data->norm.cub_distance;
 		data->norm.start = (data->mlx.h_win / 2) - (data->norm.wall_height / 2);
+
 		if (data->norm.start < 0)
 			data->norm.start = 0;
 		data->norm.end = (data->mlx.h_win / 2) + (data->norm.wall_height / 2);
+		
 		if (data->norm.end > data->mlx.h_win || data->norm.end < 0)
 			data->norm.end = data->mlx.h_win;
 		completeـdrawing2(data, i);
@@ -109,6 +114,6 @@ int	start_game(t_all *data)
 	render_minimap(data);
 	mlx_put_image_to_window(data->mlx.mlx, data->mlx.win, data->mlx.img, 0, 0); //all the textures
 	mlx_put_image_to_window(data->mlx.mlx, data->mlx.win, \
-			data->minimap.img, -20, -20); // minimap photo
+			data->minimap.img, -20, -20); // minimap photo sized
 	return (0);
 }

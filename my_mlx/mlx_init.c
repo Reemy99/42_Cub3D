@@ -14,35 +14,35 @@ void	my_mlx_pixel_put(t_all *data, int x, int y, unsigned int color)
 //loading textuers for all (E, W, S, N and Minimap)
 void	load_textures(t_all *data)
 {
-	data->e_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.ea, \
-	&data->e_txt.width, &data->e_txt.height);
-	if (!data->e_txt.img)
+	data->east_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.ea, \
+	&data->east_txt.width, &data->east_txt.height);
+	if (!data->east_txt.img)
 		exit(1);
-	data->e_txt.addr = (int *) mlx_get_data_addr(data->e_txt.img, \
-	&data->e_txt.bpp, &data->e_txt.line_length, &data->e_txt.endian);
-	data->w_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.we, \
-	&data->w_txt.width, &data->w_txt.height);
-	if (!data->w_txt.img)
+	data->east_txt.addr = (int *) mlx_get_data_addr(data->east_txt.img, \
+	&data->east_txt.bpp, &data->east_txt.line_length, &data->east_txt.endian);
+	data->west_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.we, \
+	&data->west_txt.width, &data->west_txt.height);
+	if (!data->west_txt.img)
 		exit(1);
-	data->w_txt.addr = (int *) mlx_get_data_addr(data->w_txt.img, \
-	&data->w_txt.bpp, &data->w_txt.line_length, &data->w_txt.endian);
-	data->n_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.no, \
-	&data->n_txt.width, &data->n_txt.height);
-	if (!data->n_txt.img)
+	data->west_txt.addr = (int *) mlx_get_data_addr(data->west_txt.img, \
+	&data->west_txt.bpp, &data->west_txt.line_length, &data->west_txt.endian);
+	data->north_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.no, \
+	&data->north_txt.width, &data->north_txt.height);
+	if (!data->north_txt.img)
 		exit(1);
-	data->n_txt.addr = (int *) mlx_get_data_addr(data->n_txt.img, \
-	&data->n_txt.bpp, &data->n_txt.line_length, &data->n_txt.endian);
-	data->s_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.so, \
-	&data->s_txt.width, &data->s_txt.height);
-	if (!data->s_txt.img)
+	data->north_txt.addr = (int *) mlx_get_data_addr(data->north_txt.img, \
+	&data->north_txt.bpp, &data->north_txt.line_length, &data->north_txt.endian);
+	data->south_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.so, \
+	&data->south_txt.width, &data->south_txt.height);
+	if (!data->south_txt.img)
 		exit(1);
 data->minimap.img = mlx_xpm_file_to_image(data->mlx.mlx, \
 			"./textures/minimap.xpm", &data->minimap.width, \
 			&data->minimap.height);
 	if (!data->minimap.img)
 		exit(1);
-	data->s_txt.addr = (int *) mlx_get_data_addr(data->s_txt.img, \
-	&data->s_txt.bpp, &data->s_txt.line_length, &data->s_txt.endian);
+	data->south_txt.addr = (int *) mlx_get_data_addr(data->south_txt.img, \
+	&data->south_txt.bpp, &data->south_txt.line_length, &data->south_txt.endian);
 }
 
 void	init_mlx(t_all *data)

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 18:42:09 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 18:42:11 by muganiev         ###   ########.fr       */
+/*   Created: 2023/06/29 19:04:00 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 19:08:34 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	is_up(double ang)
 	return (0);
 }
 
+//__________________________________________
+
 int	is_left(double ang)
 {
 	if (ang >= (M_PI / 2) && ang <= ((3 * M_PI) / 2))
@@ -26,19 +28,42 @@ int	is_left(double ang)
 	return (0);
 }
 
-unsigned int	get_floor_c(t_all *data)
+//__________________________________________
+
+unsigned int	floor_color(t_all *data)
 {
-	return (data->valid.floor[0] * 65536 + \
-	data->valid.floor[1] * 256 + data->valid.floor[2]);
+	unsigned int	red;
+	unsigned int	green;
+	unsigned int	blue;
+	unsigned int	color_value;
+
+	red = data->valid.floor[0];
+	green = data->valid.floor[1];
+	blue = data->valid.floor[2];
+	color_value = (red << 16) + (green << 8) + blue;
+	return color_value;
 }
+
+//__________________________________________
+// Pythagorean theorem "fethagorse"
 
 double	calculate_distance(t_all *data, double y, double x)
 {
 	return (sqrt(pow(x - data->x_player, 2) + pow(y - data->y_player, 2)));
 }
 
-unsigned int	get_ceiling_c(t_all *data)
+//__________________________________________
+
+unsigned int	ceiling_color(t_all *data)
 {
-	return (data->valid.ceiling[0] * 65536 + \
-	data->valid.ceiling[1] * 256 + data->valid.ceiling[2]);
+	unsigned int	red;
+	unsigned int	green;
+	unsigned int	blue;
+	unsigned int	color_value;
+
+	red = data->valid.ceiling[0];
+	green = data->valid.ceiling[1];
+	blue = data->valid.ceiling[2];
+	color_value = (red << 16) + (green << 8) + blue;
+	return color_value;
 }
