@@ -13,9 +13,9 @@ void	completeـdrawing1(t_all *data, double *x1, double *y1)
 		*x1 = data->hor_x;
 		data->x_offset = fmod(*x1, CUB);
 		if (is_up(data->norm.start_angle))
-			data->norm.choice_txt = &data->nort_txt;
+			data->norm.choiceast_txt = &data->north_txt;
 		else
-			data->norm.choice_txt = &data->south_txt;
+			data->norm.choiceast_txt = &data->south_txt;
 	}
 	else
 	{
@@ -23,9 +23,9 @@ void	completeـdrawing1(t_all *data, double *x1, double *y1)
 		*x1 = data->ver_x;
 		data->x_offset = fmod(*y1, CUB);
 		if (is_left(data->norm.start_angle))
-			data->norm.choice_txt = &data->east_txt;
+			data->norm.choiceast_txt = &data->east_txt;
 		else
-			data->norm.choice_txt = &data->west_txt;
+			data->norm.choiceast_txt = &data->west_txt;
 	}
 }
 //_____________________________________________________________
@@ -42,7 +42,7 @@ void	completeـdrawing2(t_all *data, int i)
 	}
 	while (j < data->norm.end)
 	{
-		data->norm.color = get_color(*data->norm.choice_txt, j, data, \
+		data->norm.color = get_color(*data->norm.choiceast_txt, j, data, \
 				data->norm.wall_height);
 		my_mlx_pixel_put(data, i, j, data->norm.color);
 		j++;

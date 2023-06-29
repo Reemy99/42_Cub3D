@@ -107,7 +107,7 @@ typedef struct s_norm
 	int				start;
 	int				end;
 	unsigned int	color;
-	t_texture		*choice_txt;
+	t_texture		*choiceast_txt;
 	double			start_angle;
 }	t_norm;
 
@@ -133,7 +133,7 @@ typedef struct s_all
 	double			x_offset;
 	t_texture		west_txt;
 	t_texture		east_txt;
-	t_texture		nort_txt;
+	t_texture		north_txt;
 	t_texture		south_txt;
 	t_texture		minimap;
 	t_norm			norm;
