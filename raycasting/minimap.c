@@ -1,5 +1,6 @@
 #include "../include/include.h"
 
+// the size of the player is 3 pixels
 void	draw_miniplayer(t_all *data, double x, double y, int color)
 {
 	int	i;
@@ -16,8 +17,9 @@ void	draw_miniplayer(t_all *data, double x, double y, int color)
 		}
 	}
 }
-
-void	draw_circle(t_all *data, double y, double x, int color)
+//________________________________________________________________
+// Chec; if the current pixel inside the minimap and draw pixel by pixel with color
+void	draw_inside_circle(t_all *data, double y, double x, int color)
 {
 	int	i;
 	int	j;
@@ -34,7 +36,7 @@ void	draw_circle(t_all *data, double y, double x, int color)
 		}
 	}
 }
-
+//________________________________________________________________
 void	render_minimap(t_all *data)
 {
 	int		i;
@@ -42,8 +44,8 @@ void	render_minimap(t_all *data)
 	double	dx;
 	double	dy;	
 
-	dx = data->x_player - 100;
-	dy = data->y_player - 100;
+	dx = data->x_player - 150;
+	dy = data->y_player - 150;
 	i = -1;
 	while (data->valid.maps[++i])
 	{
@@ -51,7 +53,7 @@ void	render_minimap(t_all *data)
 		while (data->valid.maps[i][++j])
 		{
 			if (data->valid.maps[i][j] == '1')
-				draw_circle(data, (i * CUB - dy), \
+				draw_inside_circle(data, (i * CUB - dy), \
 				(j * CUB - dx), 0x000000);
 		}
 	}
