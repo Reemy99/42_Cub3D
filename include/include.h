@@ -10,6 +10,8 @@
 # include "../utils/get_next_line/get_next_line.h"
 # include "../utils/libft/libft.h"
 
+# define CUB 15
+
 // Keycodes for mlx control character movement in the game
 # define DESTROY 17
 # define KEY_RELEASE 3
@@ -25,9 +27,6 @@
 # define ROTATE_RIGHT 124
 # define INT_MAX 2147483647
 
-// The above code is defining the size of the window
-# define CUB 10
-//
 
 typedef struct s_parss
 {
