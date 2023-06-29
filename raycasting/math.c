@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 19:04:00 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 19:08:34 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 19:24:48 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ unsigned int	floor_color(t_all *data)
 	green = data->valid.floor[1];
 	blue = data->valid.floor[2];
 	color_value = (red << 16) + (green << 8) + blue;
-	return color_value;
+	return (color_value);
 }
 
 //__________________________________________
@@ -65,5 +65,5 @@ unsigned int	ceiling_color(t_all *data)
 	green = data->valid.ceiling[1];
 	blue = data->valid.ceiling[2];
 	color_value = (red << 16) + (green << 8) + blue;
-	return color_value;
+	return (color_value);
 }

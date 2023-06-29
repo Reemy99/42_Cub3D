@@ -6,13 +6,14 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:42:18 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 18:42:19 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 19:20:29 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/include.h"
 
 // the size of the player is 3 pixels
+
 void	draw_miniplayer(t_all *data, double x, double y, int color)
 {
 	int	i;
@@ -29,8 +30,11 @@ void	draw_miniplayer(t_all *data, double x, double y, int color)
 		}
 	}
 }
+
 //________________________________________________________________
-// Chec; if the current pixel inside the minimap and draw pixel by pixel with color
+// Chec; if the current pixel inside the minimap and draw pixel by pixel 
+//with color
+
 void	draw_inside_circle(t_all *data, double y, double x, int color)
 {
 	int	i;
@@ -48,7 +52,9 @@ void	draw_inside_circle(t_all *data, double y, double x, int color)
 		}
 	}
 }
+
 //________________________________________________________________
+
 void	render_minimap(t_all *data)
 {
 	int		i;

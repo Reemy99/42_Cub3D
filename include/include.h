@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 18:00:54 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/29 19:27:08 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@
 # define ROTATE_LEFT 123
 # define ROTATE_RIGHT 124
 # define INT_MAX 2147483647
-
 
 typedef struct s_parss
 {
