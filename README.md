@@ -1,8 +1,18 @@
 
 # Cub3d
 This project is about making 3D game in C language using mlx library
+
+MiniLibX is a compact graphics library that enables you to perform essential tasks for displaying visuals on screens.
 __________________________________________________________________________________________________________________
 
+Compiling on macOS
+    The compilation process for MiniLibX on macOS can be somewhat complex due to its dependencies on AppKit and OpenGL. Properly linking these components is crucial.
+    you could add the following rule to your makefile
+
+    -Lmlx -lmlx -framework OpenGL -framework AppKit
+
+
+_____________________________________________   
 ### calculate with radian
         M_PI = 3.1415   π
         1π   = 57.295   degree
