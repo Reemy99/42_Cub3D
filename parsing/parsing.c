@@ -36,7 +36,7 @@ int	check_duplicate_metadata(t_all *data)
 	return (1);
 }
 
-int	check_map_position(t_all *data)
+int	validate_map_position(t_all *data)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ int	check_map_position(t_all *data)
 	return (1);
 }
 
-int	check_map_and_file(char *av, t_all *data)
+int	validate_map_and_file(char *av, t_all *data)
 {
 	init_data(data);
 	if (validate_file_extension(av))
@@ -102,9 +102,9 @@ void	free_parsing_data(t_all *data)
 
 int	parsing(char *av, t_all *data)
 {
-	if (!check_map_and_file(av, data))
+	if (!validate_map_and_file(av, data))
 		return (0);
-	if (!check_map_position(data))
+	if (!validate_map_position(data))
 	{
 		free_all(data);
 		free_metadata(data);

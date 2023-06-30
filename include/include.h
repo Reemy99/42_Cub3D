@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/30 14:44:40 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:53:35 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,7 +212,7 @@ int					validate_textures(t_all *data);
 int					open_file(char *str);
 void				init_textures(t_all *data);
 
-// check_map
+// validate_map
 int					check_is_white_spaces(char *str);
 int					validate_map(t_all *data);
 unsigned int		big_len(t_all *data);

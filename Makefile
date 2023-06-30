@@ -32,11 +32,11 @@ SRC =	main.c \
 		validation/validate_textures.c \
 		validation/validate_rgb_colors_utils.c\
 		validation/validate_textures_utils.c \
-		validation/check_map.c \
-		validation/check_map2.c \
-		validation/check_map3.c \
-		validation/check_map4.c\
-		validation/check_map5.c \
+		validation/validate_map.c \
+		validation/validate_map2.c \
+		validation/validate_map3.c \
+		validation/validate_map4.c\
+		validation/validate_map5.c \
 		\
 		raycasting/draw.c \
 		raycasting/math.c \
