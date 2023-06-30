@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 19:27:08 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:33:10 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "../utils/get_next_line/get_next_line.h"
 # include "../utils/libft/libft.h"
 
-# define CUB 15
+# define CUB 10
 
 // Keycodes for mlx control character movement in the game
 # define DESTROY 17
