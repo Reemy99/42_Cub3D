@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:25:18 by realdahh          #+#    #+#             */
-/*   Updated: 2023/06/30 14:45:40 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:51:44 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	complete_drawing1(t_all *data, double *x1, double *y1)
 		*x1 = data->hor_x;
 		data->x_offset = fmod(*x1, CUB);
 		if (is_up(data->norm.start_angle))
-			data->norm.choiceast_txt = &data->north_txt;
+			data->norm.choiceast_txt = &data->north_t;
 		else
-			data->norm.choiceast_txt = &data->south_txt;
+			data->norm.choiceast_txt = &data->south_t;
 	}
 	else
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/30 14:44:40 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:51:44 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,8 +142,8 @@ typedef struct s_all
 	double			x_offset;
 	t_texture		west_txt;
 	t_texture		east_txt;
-	t_texture		north_txt;
-	t_texture		south_txt;
+	t_texture		north_t;
+	t_texture		south_t;
 	t_texture		minimap;
 	t_norm			norm;
 }					t_all;
