@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/30 14:29:59 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:44:40 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "../utils/get_next_line/get_next_line.h"
 # include "../utils/libft/libft.h"
 
-# define CUB 15
+# define CUB 10
 
 // Keycodes for mlx control character movement in the game
 # define DESTROY 17

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 14:39:46 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/30 14:40:46 by muganiev         ###   ########.fr       */
+/*   Created: 2023/06/30 14:03:19 by realdahh          #+#    #+#             */
+/*   Updated: 2023/06/30 14:45:18 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	my_mlx_pixel_put(t_all *data, int x, int y, unsigned int color)
 				/ 8));
 	*(unsigned int *)dst = color;
 }
+
 //______________________________________
 //loading textuers for all (E, W, S, N and Minimap)
 
