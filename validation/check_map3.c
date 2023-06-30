@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map3.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/29 16:56:12 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 16:56:13 by muganiev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/include.h"
 
@@ -65,7 +76,7 @@ int	endmap_index(char **str)
 	i--;
 	while (str[i])
 	{
-		if (ft_strlen(str[i]) && is_empty(str[i]))
+		if (ft_strlen(str[i]) && check_is_map_empty(str[i]))
 			break ;
 		i--;
 	}

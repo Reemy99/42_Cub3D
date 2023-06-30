@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muganiev <muganiev@student.42abudhabi.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 16:13:22 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/25 17:14:20 by muganiev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "include/include.h"
 
 int	check(t_all *data)
 {
-	if (check_colors(data))
+	if (validate_rgb_colors(data))
 		return (1);
-	if (check_textures(data))
+	if (validate_textures(data))
 	{
 		free_map(data);
 		free_textures(data);
 		return (1);
 	}
-	if (check_map(data))
+	if (validate_map(data))
 	{
 		free_textures(data);
 		return (1);
@@ -38,7 +49,9 @@ int	check_wall(t_all *data, double y, double x)
 		return (1);
 	return (0);
 }
+
 //_________________________________________________________________________
+//fmod helps to divide one number by another and gives you the remainder
 
 double	normalize_angle(double ang)
 {
@@ -47,28 +60,27 @@ double	normalize_angle(double ang)
 		ang += 2 * M_PI;
 	return (ang);
 }
+
 //_________________________________________________________________________
+
 int	main(int ac, char **av)
 {
 	t_all	data;
 
 	if (ac != 2)
 	{
-		printf("Usage : ./cub3d <map name>\n");
+		printf("Usage : ./Cub3D /maps/<map name>\n");
 		exit(1);
 	}
 	else
 	{
-		if (!parssing(av[1], &data))
-		{
+		if (!parsing(av[1], &data))
 			return (1);
-		}
-		
 		if (check(&data))
 			return (1);
 		init_mlx(&data);
 		start_game(&data);
-		mlx_hook(data.mlx.win, DESTROY, 0, mlx_close, &data); //it was (data.mlx.win, DESTROY, (1L << 17), mlx_close, &data)
+		mlx_hook(data.mlx.win, DESTROY, 0, mlx_close, &data);
 		mlx_hook(data.mlx.win, KEY_RELEASE, 0, mlx_keyrelease, &data);
 		mlx_hook(data.mlx.win, KEY_PRESS, 0, mlx_key, &data);
 		mlx_loop_hook(data.mlx.mlx, mlx_keypress, &data);

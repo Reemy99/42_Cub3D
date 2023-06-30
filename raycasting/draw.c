@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 14:02:08 by realdahh          #+#    #+#             */
-/*   Updated: 2023/06/30 14:02:19 by realdahh         ###   ########.fr       */
+/*   Created: 2023/06/30 14:25:18 by realdahh          #+#    #+#             */
+/*   Updated: 2023/06/30 14:25:20 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	completeـdrawing1(t_all *data, double *x1, double *y1)
 			data->norm.choiceast_txt = &data->west_txt;
 	}
 }
+
 //_____________________________________________________________
 
 void	completeـdrawing2(t_all *data, int i)
@@ -63,17 +64,20 @@ void	completeـdrawing2(t_all *data, int i)
 		j++;
 	}
 }
+
 //_____________________________________________________________
 /*  calculates the start angle by subtracting 30 degrees from direction_ang and assigns the result to start_angle
 	convert from degree to π :
 				angle - (30 * (M_PI / 180)) -> angle - (30 * 0.01745) = 0.5235π -> 29.9999 degree
 */
+
 void	calculate_angle(t_all *data, double *increment)
 {
 	data->norm.start_angle = data->direction_ang - (30 * (M_PI / 180)); 
 	data->norm.start_angle = normalize_angle(data->norm.start_angle);
 	*increment = (60 * (M_PI / 180)) / data->mlx.w_win;
 }
+
 //_____________________________________________________________
 
 int	start_drawing(t_all *data)
@@ -107,7 +111,9 @@ int	start_drawing(t_all *data)
 	}
 	return (0);
 }
+
 //_____________________________________________________________
+
 int	start_game(t_all *data)
 {
 	start_drawing(data);

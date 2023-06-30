@@ -20,7 +20,8 @@ void	my_mlx_pixel_put(t_all *data, int x, int y, unsigned int color)
 				/ 8));
 	*(unsigned int *)dst = color;
 }
-
+//______________________________________
+//loading textuers for all (E, W, S, N and Minimap)
 void	load_textures(t_all *data)
 {
 	data->east_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.ea, \

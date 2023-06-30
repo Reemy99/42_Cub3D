@@ -1,8 +1,18 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate_textures.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/29 17:19:32 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 17:49:03 by muganiev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/include.h"
 
-int	check_east(t_all *data, int i, int len)
+int	validate_east(t_all *data, int i, int len)
 {
 	char	*str;
 	char	*trimed_str;
@@ -30,7 +40,7 @@ int	check_east(t_all *data, int i, int len)
 	return (0);
 }
 
-int	check_west(t_all *data, int i, int len)
+int	validate_west(t_all *data, int i, int len)
 {
 	char	*str;
 	char	*trimed_str;
@@ -58,7 +68,7 @@ int	check_west(t_all *data, int i, int len)
 	return (0);
 }
 
-int	check_south(t_all *data, int i, int len)
+int	validate_south(t_all *data, int i, int len)
 {
 	char	*str;
 	char	*trimed_str;
@@ -86,7 +96,7 @@ int	check_south(t_all *data, int i, int len)
 	return (0);
 }
 
-int	check_north(t_all *data, int i, int len)
+int	validate_north(t_all *data, int i, int len)
 {
 	char	*str;
 	char	*trimed_str;
@@ -114,10 +124,10 @@ int	check_north(t_all *data, int i, int len)
 	return (0);
 }
 
-int	check_textures(t_all *data)
+int	validate_textures(t_all *data)
 {
 	init_textures(data);
-	if (check_south(data, 0, 4))
+	if (validate_south(data, 0, 4))
 	{
 		free(data->parss.east);
 		free(data->parss.north);
@@ -125,18 +135,18 @@ int	check_textures(t_all *data)
 		printf("check south texture\n");
 		return (1);
 	}
-	if (check_north(data, 0, 4))
+	if (validate_north(data, 0, 4))
 	{
 		free(data->parss.east);
 		free(data->parss.west);
 		return (printf("check north texture\n"), 1);
 	}
-	if (check_west(data, 0, 4))
+	if (validate_west(data, 0, 4))
 	{
 		free(data->parss.east);
 		return (printf("check west texture\n"), 1);
 	}
-	if (check_east(data, 0, 4))
+	if (validate_east(data, 0, 4))
 		return (printf("check east texture\n"), 1);
 	return (0);
 }

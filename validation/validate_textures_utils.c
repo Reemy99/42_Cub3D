@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   validate_textures_utils.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 16:52:05 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:52:06 by muganiev         ###   ########.fr       */
+/*   Created: 2023/06/29 17:23:54 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 17:23:56 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/include.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	check_is_white_spaces(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while ((*s1 || *s2) && *s1 == *s2 && i < n -1)
+	while (str[i])
 	{
-		s1++;
-		s2++;
+		if (str[i] != ' ' && !(str[i] >= 9 && str[i] <= 13))
+			return (i);
 		i++;
 	}
-	if (n)
-		return (*((unsigned char *)s1) - *((unsigned char *)s2));
+	return (i);
+}
+
+int	open_file(char *str)
+{
+	int	fd;
+
+	fd = open(str, O_RDONLY);
+	if (fd < 0)
+		return (1);
 	return (0);
+}
+
+void	init_textures(t_all *data)
+{
+	data->valid.ea = NULL;
+	data->valid.we = NULL;
+	data->valid.so = NULL;
+	data->valid.no = NULL;
 }

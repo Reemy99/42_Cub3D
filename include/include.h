@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   include.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 19:27:08 by muganiev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef INCLUDE_H
 # define INCLUDE_H
@@ -26,7 +36,6 @@
 # define ROTATE_LEFT 123
 # define ROTATE_RIGHT 124
 # define INT_MAX 2147483647
-
 
 typedef struct s_parss
 {
@@ -155,12 +164,12 @@ void				move_left(t_all *data);
 void				move_right(t_all *data);
 void				rotate_left_and_right(t_all *data, int direction);
 
-// parssing
-int					parssing(char *av, t_all *data);
+// parsing
+int					parsing(char *av, t_all *data);
 
-// parssing utils
+// parsing utils
 void				init_data(t_all *data);
-int					check_file_name(char *av);
+int					validate_file_extension(char *av);
 int					read_file(char *file, t_all *data, int i);
 
 // free
@@ -169,43 +178,43 @@ void				free_all(t_all *data);
 void				free_rgb(char **rgb);
 void				free_textures(t_all *data);
 void				free_map(t_all *data);
-void				free_parssing(t_all *data);
+void				free_parsing_data(t_all *data);
 void				free_maps(t_all *data);
 
 // get_textures
-int					get_west(t_all *data);
-int					get_east(t_all *data);
-int					get_south(t_all *data);
-int					get_north(t_all *data);
+int					parse_west(t_all *data);
+int					parse_east(t_all *data);
+int					parse_south(t_all *data);
+int					parse_north(t_all *data);
 
 // get_colors
-int					get_floor(t_all *data);
-int					get_ceiling(t_all *data);
+int					parse_floor(t_all *data);
+int					parse_ceiling(t_all *data);
 
 // get_all
-int					get_metadata(t_all *data);
-void				get_map(t_all *data, int i, int len, int temp);
+int					get_info_of_map(t_all *data);
+void				save_map(t_all *data, int i, int len, int temp);
 
 // check colors
 int					check_ceiling(t_all *data, int j);
-int					check_colors(t_all *data);
+int					validate_rgb_colors(t_all *data);
 
-// check_colors_utils
-int					cout_comma(char *str);
-int					check_is_rgb(char **rgb);
-int					fill_ceiling(char **color, t_all *data);
-int					fill_floor(char **color, t_all *data);
+// validate_rgb_colors_utils
+int					count_commas(char *str);
+int					check_rgb_validity(char **rgb);
+int					fill_ceiling_color(char **color, t_all *data);
+int					fill_floor_color(char **color, t_all *data);
 
-// check_textures
-int					check_textures(t_all *data);
+// validate_textures
+int					validate_textures(t_all *data);
 
-// check_textures_utils
+// validate_textures_utils
 int					open_file(char *str);
 void				init_textures(t_all *data);
 
 // check_map
 int					check_is_white_spaces(char *str);
-int					check_map(t_all *data);
+int					validate_map(t_all *data);
 unsigned int		big_len(t_all *data);
 void				init_map(t_all *data);
 int					check_characters(t_all *data);
@@ -219,8 +228,8 @@ int					check_player(t_all *data, int i, int j, int player);
 int					middle_char(t_all *data, int i, int j, int start);
 int					middle_char_helper(t_all *data, int i, int j);
 int					zero_checker(t_all *data, int i, int j);
-int					space_checker(t_all *data, int i, int j);
-int					is_empty(char *str);
+int					check_space(t_all *data, int i, int j);
+int					check_is_map_empty(char *str);
 int					check_wall(t_all *data, double y, double x);
 int					check_wall_y(t_all *data, int x_wall, int y_wall);
 int					check_wall_x(t_all *data, int x_wall, int y_wall);

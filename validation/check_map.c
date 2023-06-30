@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/29 16:51:02 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 16:51:04 by muganiev         ###   ########.fr       */
+/*   Created: 2023/06/29 16:56:01 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/29 18:00:54 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/include.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	validate_map(t_all *data)
 {
-	write(fd, &c, 1);
+	init_map(data);
+	add_space(data);
+	if (check_characters(data))
+	{
+		free_maps(data);
+		printf("invalid map characters\n");
+		return (1);
+	}
+	if (check_valid_map(data))
+	{
+		free_maps(data);
+		printf("invalid map \n");
+		return (1);
+	}
+	init_angle(data);
+	return (0);
 }
