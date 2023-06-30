@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 19:27:08 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:29:59 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,7 +257,8 @@ void				vertical_inter_helper(t_all *data, \
 void				vertical_inter(t_all *data, double ang);
 
 void				render_minimap(t_all *data);
-void				draw_inside_circle(t_all *data, double y, double x, int color);
+void				draw_inside_circle(t_all *data, double y,
+						double x, int color);
 void				draw_miniplayer(t_all *data, double x, double y, int color);
 
 #endif

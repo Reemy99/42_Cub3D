@@ -6,13 +6,13 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:41:54 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/29 19:23:49 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:38:55 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/include.h"
 
-void	completeـdrawing1(t_all *data, double *x1, double *y1)
+void	complete_drawing1(t_all *data, double *x1, double *y1)
 {
 	horizontal_inter(data, data->norm.start_angle);
 	vertical_inter(data, data->norm.start_angle);
@@ -41,7 +41,7 @@ void	completeـdrawing1(t_all *data, double *x1, double *y1)
 
 //_____________________________________________________________
 
-void	completeـdrawing2(t_all *data, int i)
+void	complete_drawing2(t_all *data, int i)
 {
 	int	j;
 
@@ -66,19 +66,21 @@ void	completeـdrawing2(t_all *data, int i)
 }
 
 //_____________________________________________________________
-/*  calculates the start angle by subtracting 30 degrees from direction_ang and assigns the result to start_angle
-	convert from degree to π :
-				angle - (30 * (M_PI / 180)) -> angle - (30 * 0.01745) = 0.5235π -> 29.9999 degree
+/*  calculates the start angle by subtracting 30 degrees from 
+direction_ang and assigns the result to start_angle
+convert from degree to π :
+angle - (30 * (M_PI / 180)) -> angle - (30 * 0.01745) = 0.5235π -> 29.9999 degree
 */
 
 void	calculate_angle(t_all *data, double *increment)
 {
-	data->norm.start_angle = data->direction_ang - (30 * (M_PI / 180)); 
+	data->norm.start_angle = data->direction_ang - (30 * (M_PI / 180));
 	data->norm.start_angle = normalize_angle(data->norm.start_angle);
 	*increment = (60 * (M_PI / 180)) / data->mlx.w_win;
 }
 
 //_____________________________________________________________
+// player angle
 
 int	start_drawing(t_all *data)
 {
@@ -87,39 +89,37 @@ int	start_drawing(t_all *data)
 	double			y1;
 	double			increment;
 
-	calculate_angle(data, &increment); // player angle
+	calculate_angle(data, &increment);
 	i = -1;
 	while (++i < data->mlx.w_win)
 	{
-		completeـdrawing1(data, &x1, &y1);
+		complete_drawing1(data, &x1, &y1);
 		data->norm.cub_distance = calculate_distance(data, y1, x1) / CUB;
-
 		data->norm.cub_distance *= cos(data->direction_ang - \
 				data->norm.start_angle);
-
 		data->norm.wall_height = data->mlx.h_win / data->norm.cub_distance;
 		data->norm.start = (data->mlx.h_win / 2) - (data->norm.wall_height / 2);
-
 		if (data->norm.start < 0)
 			data->norm.start = 0;
 		data->norm.end = (data->mlx.h_win / 2) + (data->norm.wall_height / 2);
-		
 		if (data->norm.end > data->mlx.h_win || data->norm.end < 0)
 			data->norm.end = data->mlx.h_win;
-		completeـdrawing2(data, i);
+		complete_drawing2(data, i);
 		data->norm.start_angle += increment;
 	}
 	return (0);
 }
 
 //_____________________________________________________________
+//all the textures
+// minimap photo sized
 
 int	start_game(t_all *data)
 {
 	start_drawing(data);
 	render_minimap(data);
-	mlx_put_image_to_window(data->mlx.mlx, data->mlx.win, data->mlx.img, 0, 0); //all the textures
+	mlx_put_image_to_window(data->mlx.mlx, data->mlx.win, data->mlx.img, 0, 0);
 	mlx_put_image_to_window(data->mlx.mlx, data->mlx.win, \
-			data->minimap.img, -20, -20); // minimap photo sized
+			data->minimap.img, -20, -20);
 	return (0);
 }

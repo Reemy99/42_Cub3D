@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mlx_init.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/30 14:39:46 by muganiev          #+#    #+#             */
+/*   Updated: 2023/06/30 14:40:46 by muganiev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/include.h"
 
@@ -12,6 +22,7 @@ void	my_mlx_pixel_put(t_all *data, int x, int y, unsigned int color)
 }
 //______________________________________
 //loading textuers for all (E, W, S, N and Minimap)
+
 void	load_textures(t_all *data)
 {
 	data->east_txt.img = mlx_xpm_file_to_image(data->mlx.mlx, data->valid.ea, \
@@ -56,6 +67,6 @@ void	init_mlx(t_all *data)
 	data->mlx.h_win);
 	data->mlx.addr = mlx_get_data_addr(data->mlx.img, &data->mlx.bpp,
 			&data->mlx.line_length, &data->mlx.endian);
-	//ft_bzero(&data->key, sizeof(data->key));
+	ft_bzero(&data->key, sizeof(data->key));
 	load_textures(data);
 }
