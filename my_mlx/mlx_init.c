@@ -6,7 +6,7 @@
 /*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:03:19 by realdahh          #+#    #+#             */
-/*   Updated: 2023/06/30 15:05:44 by realdahh         ###   ########.fr       */
+/*   Updated: 2023/06/30 21:37:48 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	my_mlx_pixel_put(t_all *data, int x, int y, unsigned int color)
 }
 
 //______________________________________
+
 void	load_minimap_txt(t_all *data)
 {
 	data->minimap.img = mlx_xpm_file_to_image(data->mlx.mlx, \
@@ -30,8 +31,8 @@ void	load_minimap_txt(t_all *data)
 	if (!data->minimap.img)
 		exit(1);
 }
+
 //______________________________________
-//loading textuers for all (E, W, S, N and Minimap)
 
 void	load_textures(t_all *data)
 {
@@ -61,6 +62,8 @@ void	load_textures(t_all *data)
 	data->south_t.addr = (int *) mlx_get_data_addr(data->south_t.img, \
 	&data->south_t.bpp, &data->south_t.line_length, &data->south_t.endian);
 }
+
+//____________________________________________________
 
 void	init_mlx(t_all *data)
 {

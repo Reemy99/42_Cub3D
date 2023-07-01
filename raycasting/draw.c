@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:25:18 by realdahh          #+#    #+#             */
-/*   Updated: 2023/06/30 15:09:00 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/07/01 14:59:17 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	complete_drawing2(t_all *data, int i)
 	}
 	while (j < data->norm.end)
 	{
-		data->norm.color = get_color(*data->norm.choiceast_txt, j, data, \
+		data->norm.color = get_textures(*data->norm.choiceast_txt, j, data, \
 				data->norm.wall_height);
 		my_mlx_pixel_put(data, i, j, data->norm.color);
 		j++;

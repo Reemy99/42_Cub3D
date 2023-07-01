@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:56:16 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/30 14:54:45 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/07/01 14:59:25 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	check_valid_map(t_all *data)
 
 void	init_angle(t_all *data)
 {
-	data->rotation_speed = 5 * (M_PI / 180);
+	data->rotation_speed = 1 * (M_PI / 180);
 	if (data->valid.player == 'S')
 		data->direction_ang = M_PI / 2;
 	if (data->valid.player == 'N')

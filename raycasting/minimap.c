@@ -6,7 +6,7 @@
 /*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:25:47 by realdahh          #+#    #+#             */
-/*   Updated: 2023/06/30 14:25:49 by realdahh         ###   ########.fr       */
+/*   Updated: 2023/07/01 12:24:46 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	draw_miniplayer(t_all *data, double x, double y, int color)
 }
 
 //________________________________________________________________
-// Chec; if the current pixel inside the minimap and draw pixel by pixel 
-//with color
+// Check if the current pixel inside the minimap and draw pixel by pixel 
+// with color
 
 void	draw_inside_circle(t_all *data, double y, double x, int color)
 {

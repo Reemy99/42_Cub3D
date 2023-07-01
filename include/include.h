@@ -6,7 +6,7 @@
 /*   By: muganiev <muganiev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 16:53:50 by muganiev          #+#    #+#             */
-/*   Updated: 2023/06/30 15:08:49 by muganiev         ###   ########.fr       */
+/*   Updated: 2023/07/01 14:59:07 by muganiev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,7 +241,7 @@ double				normalize_angle(double ang);
 double				calculate_distance(t_all *data, double y, double x);
 int					is_left(double ang);
 int					is_up(double ang);
-unsigned int		get_color(t_texture txt, double y, t_all *data, \
+unsigned int		get_textures(t_texture txt, double y, t_all *data, \
 					double wall_h);
 unsigned int		floor_color(t_all *data);
 unsigned int		ceiling_color(t_all *data);
