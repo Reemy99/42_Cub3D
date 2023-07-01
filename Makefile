@@ -42,12 +42,12 @@ SRC =	main.c \
 		raycasting/math.c \
 		raycasting/minimap.c \
 		raycasting/draw_ray.c \
-		raycasting/intersections.c \
-		raycasting/intersections2.c \
+		raycasting/calculate_horizontal.c \
+		raycasting/calculate_vertical.c \
 		\
 		my_mlx/mlx_key.c \
 		my_mlx/mlx_init.c \
-		my_mlx/mlx_actions.c\
+		my_mlx/mlx_events.c\
 		free/free.c \
 		free/free2.c \
 
