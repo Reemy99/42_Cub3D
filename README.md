@@ -5,9 +5,9 @@ This project is about making 3D game in C language using mlx library
 MiniLibX is a compact graphics library that enables you to perform essential tasks for displaying visuals on screens.
 __________________________________________________________________________________________________________________
 
-Compiling on macOS
-    The compilation process for MiniLibX on macOS can be somewhat complex due to its dependencies on AppKit and OpenGL. Properly linking these components is crucial.
-    you could add the following rule to your makefile
+# Compiling on macOS
+The compilation process for MiniLibX on macOS can be somewhat complex due to its dependencies on AppKit and OpenGL. Properly linking these components is crucial.
+you could add the following rule to your makefile
 
     -Lmlx -lmlx -framework OpenGL -framework AppKit
 
