@@ -1,5 +1,5 @@
 CC = cc
-NAME = Cub3d
+NAME = cub3D
 HEADER = include/include.h
 FLAGS = -Wall -Wextra -Werror -Imlx -g
 LIBFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
