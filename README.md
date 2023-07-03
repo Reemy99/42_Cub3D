@@ -34,7 +34,8 @@ we used it on *int main* function with calling the *RELEASE, PRESS and DESTROY* 
 
 _____________________________________________
 
-### calculate with radian
+In coding we use radian for calculation so this introduction for radian### calculate with radian
+
         M_PI = 3.1415   π
         1π   = 57.295   degree
         
@@ -43,7 +44,6 @@ _____________________________________________
 
 _____________________________________________
 
-To run this Game run this command 
+To run this Game run this command, (Tne name of the program) and (The path to the map.cub)
 
     ./Cub3d maps/spiral_map.cub 
-(Tne name of the program) and (The path to the map.cub)
