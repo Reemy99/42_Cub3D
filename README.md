@@ -42,3 +42,7 @@ _____________________________________________
     6.2831   = 359.999  degree (full circle)
 
 _____________________________________________
+
+To run this Game run this command 
+    ./Cub3d maps/spiral_map.cub 
+(Tne name of the program) and (The path to the map.cub)
