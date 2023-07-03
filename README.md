@@ -16,7 +16,7 @@ _____________________________________________
 1. initialize mlx
 2. Draw Mini Map
 3. Draw Mini Player
-4. Define the keys for all directions (forward, backward, left, right, rotate left, rotate right)
+4. Code the keys for all directions (forward, backward, left, right, rotate left, rotate right)
 5. Draw the walls
 6. load the textures on your walls
 ______________________________________________
