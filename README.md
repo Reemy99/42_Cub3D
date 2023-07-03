@@ -48,4 +48,4 @@ To run this Game run this command, (Tne name of the program) and (The path to th
 
     ./Cub3d maps/spiral_map.cub 
 
-![Uploading Screen Shot 2023-07-03 at 8.18.36 PM.png…]()
+<img width="846" alt="Screen Shot 2023-07-03 at 8 18 36 PM" src="https://github.com/realdahh/42_Cub3D/assets/111651235/ef55c16f-a92b-47d7-a0a3-8915d9cd3362">
