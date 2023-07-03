@@ -44,5 +44,6 @@ _____________________________________________
 _____________________________________________
 
 To run this Game run this command 
+
     ./Cub3d maps/spiral_map.cub 
 (Tne name of the program) and (The path to the map.cub)
