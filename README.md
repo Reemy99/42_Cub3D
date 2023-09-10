@@ -34,7 +34,8 @@ we used it on *int main* function with calling the *RELEASE, PRESS and DESTROY* 
 
 _____________________________________________
 
-In coding we use radian for calculation so this introduction for radian### calculate with radian
+In coding we use radian for calculation so this introduction for radian
+### calculate with radian
 
         M_PI = 3.1415   π
         1π   = 57.295   degree
