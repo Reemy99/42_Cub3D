@@ -1,7 +1,6 @@
 
 # Cub3d
 
-__________________________________________________________________________________________________________________
 ## Compiling on macOS
 The compilation process for MiniLibX on macOS can be somewhat complex due to its dependencies on AppKit and OpenGL. Properly linking these components is crucial.
 you could add the following rule to your makefile
